@@ -1,0 +1,44 @@
+@extends('layouts.app')
+
+@section('content')
+
+
+<div class="panel panel-default">
+	<div class="panel panel-heading main-body">
+				All Categories
+			</div>
+	<div class="panel-body">
+		<table class="table table-hover">
+	
+	<thead>
+		<th class="center-heading">Category Name</th>
+		<th class="center-heading">Editing</th>
+		<th class="center-heading">Deleting</th>
+	</thead>
+	<tbody>
+		@foreach($categories as $category)
+		<tr>
+			<td class="center-body">
+				{{$category->name}}
+			</td>
+
+			<td class="center-body">
+				<a href="{{route('category.edit',['id'=>$category->id])}}" class="btn btn-info btn-sm">
+					<span class="fas fa-pencil-alt"></span>
+				</a>
+			</td>
+
+			<td class="center-body">
+				<a href="{{route('category.delete',['id'=>$category->id])}}" class="btn btn-sm btn-danger ">
+					<span class="fas fa-trash-alt"></span>
+				</a>
+			</td>
+		</tr>
+		@endforeach
+	</tbody>
+
+</table>
+	</div>
+</div>
+
+@stop

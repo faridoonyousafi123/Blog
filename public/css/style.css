@@ -1,0 +1,45 @@
+a
+{
+	text-decoration:none !important;
+
+}
+.center-heading
+{
+	text-align: center;
+}
+.center-body
+{
+	text-align: center;
+}
+.main-body{
+
+	text-align: center;
+	font-size: 1.5em;
+	border-color: #ffcc00 !important;
+	background-color: #ffcc00 !important;
+}
+.menu-items{
+	
+	
+	border-color: #ffcc00 !important;
+	background-color: #ffcc00 !important;
+}
+.menu-items a{
+	color:black !important;
+
+}
+.main-menu-items{
+	border:1px solid black;
+	text-align: left;
+	font-size: 1em;
+	border:none;
+}
+
+.menu-items a:hover{
+	
+	color:red !important;
+	font-weight: bold;
+
+	transition: color font-weight 0.2s ease-out;
+
+}
