@@ -13,7 +13,7 @@
 			</div>
 
 			<div class="panel panel-body">
-				<form action="{{ route('post.update',['id'=>$posts->id]) }}" method="post">
+				<form action="{{ route('post.update',['id'=>$posts->id]) }}" method="post" enctype="multipart/form-data">
 					{{csrf_field()}}
 
 					<div class="form-group">
@@ -26,9 +26,10 @@
 					<div class="form-group">
 
 					<label for="featured">Featured Image</label>
-					<input type="file" name="featured" value="{{$posts->featured}}"class="form-control">
+					<input type="file" name="featured" class="form-control">
 					
 					</div>
+
 					<div class="form-group">
 
 					<label for="category">Select a Category</label>
@@ -40,6 +41,7 @@
 					</select>
 					</div>
 
+					<div class="form-group">
 
 					<label for="content">Content</label>
 					<textarea  name="content" id="content" cols="5" rows="5" class="form-control">{{$posts->content}}</textarea>

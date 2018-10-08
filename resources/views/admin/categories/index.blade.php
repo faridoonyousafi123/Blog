@@ -16,6 +16,7 @@
 		<th class="center-heading">Deleting</th>
 	</thead>
 	<tbody>
+		@if($categories->count()>0)
 		@foreach($categories as $category)
 		<tr>
 			<td class="center-body">
@@ -35,8 +36,14 @@
 			</td>
 		</tr>
 		@endforeach
-	</tbody>
 
+		@else
+				<tr>
+					<th colspan="5" class="text-center">No Categories</th>
+				</tr>
+		@endif
+	</tbody>
+	
 </table>
 	</div>
 </div>

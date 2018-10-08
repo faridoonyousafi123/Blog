@@ -13,15 +13,19 @@
 	<thead>
 		<th class="center-heading">Image</th>
 		<th class="center-heading">Title</th>
+	
 		<th class="center-heading">Edit</th>
 		<th class="center-heading">Trush</th>
 	</thead>
 	<tbody>
+		@if($posts->count()>0)
+			
 		@foreach($posts as $post)
 	
 		<tr>
 			<td class="center-body"><img src="{{$post->featured}}" alt="{{$post->title}}" width="70px" height="60px"></td>
 			<td class="center-body">{{$post->title}}</td>
+
 			<td class="center-body">
 				<a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-info btn-sm">
 					<span class="fas fa-pencil-alt"></span>
@@ -37,6 +41,12 @@
 
 
 		@endforeach	
+
+		@else
+			<tr>
+				<th colspan="50" class="text-center">No Published Posts</th>
+			</tr>
+		@endif
 	</tbody>
 
 </table>
