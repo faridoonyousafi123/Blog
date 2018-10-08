@@ -39,7 +39,27 @@ a
 	
 	color:red !important;
 	font-weight: bold;
-
+	
 	transition: color font-weight 0.2s ease-out;
 
+}
+td:hover span{
+
+	animation: jiggle 0.5s ease-in infinite;
+  	transition-delay:0s; 
+
+}
+@keyframes jiggle {
+  48%, 62% {
+    transform: scale(1.0, 1.0)
+  }
+  50% {
+    transform: scale(1.1, 0.9)
+  }
+  56% {
+    transform: scale(0.9, 1.1) translate(0, -5px)
+  }
+  59% {
+    transform: scale(1.0, 1.0) translate(0, -3px)
+  }
 }

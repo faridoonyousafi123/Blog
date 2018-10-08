@@ -23,7 +23,7 @@
 		@foreach($posts as $post)
 	
 		<tr>
-			<td class="center-body"><img src="{{$post->featured}}" alt="{{$post->title}}" width="70px" height="60px"></td>
+			<td class="center-body"><img src="{{$post->featured}}" alt="{{$post->title}}" width="60px" height="60px"></td>
 			<td class="center-body">{{$post->title}}</td>
 
 			<td class="center-body">

@@ -78,7 +78,7 @@
             <div class="row">
 
                 @if(Auth::check())
-                     <div class="col-lg-4" >
+                     <div class="col-lg-4 text-left" >
                     <ul class="list-item main-menu-items" >
                          <li class="list-group-item menu-items">
                             <a href="{{route('home')}}"><span class="fas fa-home" style="margin-right: 10px;"></span>Home</a>
