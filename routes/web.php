@@ -164,6 +164,41 @@
 			'as'=>'users'
 		]);
 
+		Route::get('/users/create',[
+
+			'uses'=>"UsersController@create",
+			'as'=>'user.create'
+		]);
+
+		Route::post('/users/store',[
+
+			'uses'=>"UsersController@store",
+			'as'=>'user.store'
+		]);
+
+		Route::get('/users/admin/{id}',[
+
+			'uses'=>"UsersController@admin",
+			'as'=>'user.admin'
+		])->middleware('admin');
+
+		Route::get('/users/not-admin/{id}',[
+
+			'uses'=>"UsersController@notAdmin",
+			'as'=>'user.notadmin'
+		]);
+
+		Route::get('/users/profile',[
+
+			'uses'=>"ProfilesController@index",
+			'as'=>'user.profile'
+		]);
+
+		Route::post('/users/profile/update',[
+
+			'uses'=>"ProfilesController@update",
+			'as'=>'user.profile.update'
+		]);
 
 		
 		
