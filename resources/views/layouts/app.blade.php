@@ -107,6 +107,10 @@
                             <a href="{{route('tag.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>New Tag</a>
                         </li>
 
+                         <li class="list-group-item menu-items">
+                            <a href="{{route('users')}}"><span class="fas fa-user" style="margin-right: 10px;"></span>Users</a>
+                        </li>
+
 
                          <li class="list-group-item menu-items">
                             <a href="{{route('post.trashed')}}"><span class="fas fa-trash-alt" style="margin-right: 10px;"></span>All Trashed Posts</a>

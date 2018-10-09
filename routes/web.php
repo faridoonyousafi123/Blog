@@ -1,10 +1,10 @@
 	<?php
 // // one to many
-// 	Route::get('/testcategory', function(){
+// 	Route::get('/test', function(){
 
-// 		return App\Category::find(5)->posts;
+// 		return App\User::find()->profile;
 
-// 	});
+// });
 
 // 	Route::get('/testpost', function(){
 
@@ -156,6 +156,12 @@
 
 			'uses'=>"TagsController@destroy",
 			'as'=>'tag.delete'
+		]);
+
+		Route::get('/users',[
+
+			'uses'=>"UsersController@index",
+			'as'=>'users'
 		]);
 
 
