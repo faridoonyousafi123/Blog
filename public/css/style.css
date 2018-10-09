@@ -11,6 +11,7 @@ a
 {
 	text-align: center;
 }
+
 .main-body{
 
 	text-align: center;
@@ -23,6 +24,15 @@ a
 	
 	border-color: #ffcc00 !important;
 	background-color: #ffcc00 !important;
+	box-shadow: 1px 1px 2px 3px darkgrey;
+}
+
+.menu-items:hover{
+	-webkit-box-shadow: 2px 3px 51px 0px rgba(0,0,0,0.98);
+	-moz-box-shadow: 2px 3px 51px 0px rgba(0,0,0,0.98);
+	box-shadow: 2px 3px 51px 0px rgba(0,0,0,0.98);
+	transition: box-shadow 0.2s ease-in;
+	cursor:pointer;
 }
 .menu-items a{
 	color:black !important;

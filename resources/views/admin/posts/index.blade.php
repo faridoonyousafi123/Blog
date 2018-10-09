@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="panel panel-default">
+<div class="panel panel-default panel-shadow">
 	<div class="panel panel-heading main-body">
 				All Posts
 			</div>

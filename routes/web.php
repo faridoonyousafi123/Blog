@@ -1,15 +1,18 @@
 	<?php
+// // one to many
+// 	Route::get('/testcategory', function(){
 
-	/*
-	|--------------------------------------------------------------------------
-	| Web Routes
-	|--------------------------------------------------------------------------
-	|
-	| Here is where you can register web routes for your application. These
-	| routes are loaded by the RouteServiceProvider within a group which
-	| contains the "web" middleware group. Now create something great!
-	|
-	*/
+// 		return App\Category::find(5)->posts;
+
+// 	});
+
+// 	Route::get('/testpost', function(){
+
+// 		return App\Post::find(11)->category;
+
+// 	});
+
+// 	// many to many
 
 	Route::get('/', function () {
 	    return view('welcome');
@@ -118,6 +121,41 @@
 
 			'uses'=>"CategoriesController@destroy",
 			'as'=>'category.delete'
+		]);
+
+		Route::get('/tags',[
+
+			'uses'=>"TagsController@index",
+			'as'=>'tags'
+		]);
+
+		Route::get('/tag/edit/{id}',[
+
+			'uses'=>"TagsController@edit",
+			'as'=>'tag.edit'
+		]);
+
+		Route::get('/tag/create',[
+
+			'uses'=>"TagsController@create",
+			'as'=>'tag.create'
+		]);
+		Route::post('/tag/store',[
+
+			'uses'=>"TagsController@store",
+			'as'=>'tag.store'
+		]);
+
+		Route::post('/tag/update/{id}',[
+
+			'uses'=>"TagsController@update",
+			'as'=>'tag.update'
+		]);
+
+		Route::get('/tag/delete/{id}',[
+
+			'uses'=>"TagsController@destroy",
+			'as'=>'tag.delete'
 		]);
 
 

@@ -85,20 +85,28 @@
                          </li>
 
                          <li class="list-group-item menu-items">
-                            <a href="{{route('category.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>Create new Category</a>
+                            <a href="{{route('category.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>New Category</a>
                          </li>
 
                          <li class="list-group-item menu-items">
-                            <a href="{{route('categories')}}"><span class="fas fa-align-justify" style="margin-right: 10px;"></span>Categories</a>
+                            <a href="{{route('categories')}}"><span class="fas fa-align-justify" style="margin-right: 10px;"></span>All Categories</a>
                          </li>
                             
                          <li class="list-group-item menu-items">
-                            <a href="{{route('posts')}}"><span class="fas fa-clipboard" style="margin-right: 10px;"></span>All Posts</a>
+                            <a href="{{route('posts')}}"><span class="fas fa-clipboard" style="margin-right: 10px;"></span>All Published Posts</a>
                         </li>
 
                         <li class="list-group-item menu-items">
-                            <a href="{{route('post.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>Create new Post</a>
+                            <a href="{{route('post.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>New Post</a>
                         </li>
+
+                         <li class="list-group-item menu-items">
+                            <a href="{{route('tags')}}"><span class="fas fa-tag" style="margin-right: 10px;"></span>All tags</a>
+                        </li>
+                         <li class="list-group-item menu-items">
+                            <a href="{{route('tag.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>New Tag</a>
+                        </li>
+
 
                          <li class="list-group-item menu-items">
                             <a href="{{route('post.trashed')}}"><span class="fas fa-trash-alt" style="margin-right: 10px;"></span>All Trashed Posts</a>

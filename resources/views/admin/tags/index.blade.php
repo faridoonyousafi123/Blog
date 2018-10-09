@@ -5,33 +5,33 @@
 
 <div class="panel panel-default">
 	<div class="panel panel-heading main-body">
-				All Categories
+				All Tags
 			</div>
 	<div class="panel-body">
 		<table class="table table-hover">
 	
 	<thead>
-		<th class="center-heading">Category Name</th>
-		<th class="center-heading">Editing</th>
-		<th class="center-heading">Deleting</th>
+		<th class="center-heading">Tag</th>
+		<th class="center-heading">Edit</th>
+		<th class="center-heading">Delete</th>
 	</thead>
 	<tbody>
-		@if($categories->count()>0)
-		@foreach($categories as $category)
+		@if($tags->count()>0)
+		@foreach($tags as $tag)
 		<tr>
 			<td class="center-body">
-				<span class="fas fa-align-justify"></span>
-				{{$category->name}}
+				<span class="fas fa-tag"></span>
+				{{$tag->tag}}
 			</td>
 
 			<td class="center-body">
-				<a href="{{route('category.edit',['id'=>$category->id])}}" class="btn btn-info btn-sm">
+				<a href="{{route('tag.edit',['id'=>$tag->id])}}" class="btn btn-info btn-sm">
 					<span class="fas fa-pencil-alt"></span>
 				</a>
 			</td>
 
 			<td class="center-body">
-				<a href="{{route('category.delete',['id'=>$category->id])}}" class="btn btn-sm btn-danger ">
+				<a href="{{route('tag.delete',['id'=>$tag->id])}}" class="btn btn-sm btn-danger ">
 					<span class="fas fa-trash-alt"></span>
 				</a>
 			</td>
@@ -40,7 +40,7 @@
 
 		@else
 				<tr>
-					<th colspan="5" class="text-center">No Categories</th>
+					<th colspan="5" class="text-center">No Tags</th>
 				</tr>
 		@endif
 	</tbody>
