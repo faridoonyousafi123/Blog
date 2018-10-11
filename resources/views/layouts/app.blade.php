@@ -80,53 +80,54 @@
                 @if(Auth::check())
                      <div class="col-lg-4 text-left" >
                     <ul class="list-item main-menu-items" >
-                         <li class="list-group-item menu-items">
-                            <a href="{{route('home')}}"><span class="fas fa-home" style="margin-right: 10px;"></span>Home</a>
-                         </li>
+                        <a class="menu-items-link" href="{{route('home')}}"> <li class="list-group-item menu-items">
+                            <span class="fas fa-home" style="margin-right: 10px;"></span>Home
+                         </li></a>
 
-                         <li class="list-group-item menu-items">
-                            <a href="{{route('category.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>New Category</a>
-                         </li>
+                         <a class="menu-items-link" href="{{route('category.create')}}"><li class="list-group-item menu-items">
+                            <span class="fas fa-plus" style="margin-right: 10px;"></span>New Category
+                         </li></a>
 
-                         <li class="list-group-item menu-items">
-                            <a href="{{route('categories')}}"><span class="fas fa-align-justify" style="margin-right: 10px;"></span>All Categories</a>
-                         </li>
+                        <a class="menu-items-link" href="{{route('categories')}}"> <li class="list-group-item menu-items">
+                            <span class="fas fa-align-justify" style="margin-right: 10px;"></span>All Categories
+                         </li></a>
                             
-                         <li class="list-group-item menu-items">
-                            <a href="{{route('posts')}}"><span class="fas fa-clipboard" style="margin-right: 10px;"></span>All Published Posts</a>
-                        </li>
+                        <a class="menu-items-link" href="{{route('posts')}}"> <li class="list-group-item menu-items">
+                            <span class="fas fa-clipboard" style="margin-right: 10px;"></span>All Posts
+                        </li></a>
 
-                        <li class="list-group-item menu-items">
-                            <a href="{{route('post.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>New Post</a>
-                        </li>
+                         <a class="menu-items-link" href="{{route('post.create')}}"><li class="list-group-item menu-items">
+                           <span class="fas fa-plus" style="margin-right: 10px;"></span>New Post
+                        </li></a>
 
-                         <li class="list-group-item menu-items">
-                            <a href="{{route('tags')}}"><span class="fas fa-tag" style="margin-right: 10px;"></span>All tags</a>
-                        </li>
-                         <li class="list-group-item menu-items">
-                            <a href="{{route('tag.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>New Tag</a>
-                        </li>
+                          <a class="menu-items-link" href="{{route('tags')}}"><li class="list-group-item menu-items">
+                            <span class="fas fa-tag" style="margin-right: 10px;"></span>All tags
+                        </li></a>
+                        
+                          <a class="menu-items-link" href="{{route('tag.create')}}"><li class="list-group-item menu-items">
+                           <span class="fas fa-plus" style="margin-right: 10px;"></span>New Tag
+                        </li></a>
 
                         @if(Auth::user()->admin)
 
-                         <li class="list-group-item menu-items">
-                            <a href="{{route('users')}}"><span class="fas fa-user" style="margin-right: 10px;"></span>Users</a>
-                        </li>
+                        <a class="menu-items-link" href="{{route('users')}}"> <li class="list-group-item menu-items">
+                            <span class="fas fa-user" style="margin-right: 10px;"></span>Users
+                        </li></a>
 
-                         <li class="list-group-item menu-items">
-                            <a href="{{route('user.create')}}"><span class="fas fa-plus" style="margin-right: 10px;"></span>Add User</a>
-                        </li>
+                        <a class="menu-items-link" href="{{route('user.create')}}"> <li class="list-group-item menu-items">
+                            <span class="fas fa-plus" style="margin-right: 10px;"></span>Add User
+                        </li></a>
 
                       @endif
 
 
-                        <li class="list-group-item menu-items">
-                            <a href="{{route('user.profile')}}"><span class="fas fa-user-edit" style="margin-right: 10px;"></span>My Profile</a>
-                        </li>
+                       <a class="menu-items-link" href="{{route('user.profile')}}"> <li class="list-group-item menu-items">
+                            <span class="fas fa-user-edit" style="margin-right: 10px;"></span>My Profile
+                        </li></a>
 
-                         <li class="list-group-item menu-items">
-                            <a href="{{route('post.trashed')}}"><span class="fas fa-trash-alt" style="margin-right: 10px;"></span>All Trashed Posts</a>
-                        </li>
+                         <a class="menu-items-link" href="{{route('post.trashed')}}"><li class="list-group-item menu-items">
+                            <span class="fas fa-trash-alt" style="margin-right: 10px;"></span>All Trashed Posts
+                        </li></a>
                     </ul>
                 </div>
                 @endif

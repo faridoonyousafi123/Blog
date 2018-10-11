@@ -24,11 +24,17 @@
 	
 		<tr>
 			<td class="center-body"><img src="{{asset($user->profile->avatar)}}" alt="" width="60px" height="60px" style="border-radius: 50%;"></td>
-			<td class="center-body">{{$user->name}}</td>
 
+			<td class="center-body">{{$user->name}}</td>
+		
 			<td class="center-body">
-				@if($user->admin)
 				
+				@if(Auth::id()==$user->id)
+
+								
+
+				@elseif($user->admin)
+					
 					<a href="{{route('user.notadmin',['id'=>$user->id])}}" class="btn btn-xs btn-danger">Remove Permission</a>
 
 				@else
@@ -39,7 +45,14 @@
 			</td>
 
 			<td class="center-body">
+
+				@if(Auth::id()!==$user->id)
+
 				
+				<a href="{{route('user.delete',['id'=>$user->id])}}" class="btn btn-sm btn-danger">
+				<span class="fas fa-trash-alt"></span></a>
+
+				@endif
 			</td>
 		</tr>
 

@@ -70,7 +70,7 @@ class CategoriesController extends Controller
         $category= Category::find($id);
         
         return view('admin.categories.edit')->with('category',$category);
-   
+
 
     }
 
@@ -102,6 +102,18 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         $category= Category::find($id);
+
+        foreach($category->posts as $post)
+        {
+            if($category->posts->count()>0)
+            {
+                Session::flash('info','This Category is associated with a Post Entitled \' '.$post->title.' \' Please delete the post first');
+                return redirect()->back();
+            }
+            else
+
+            $post->delete();
+        }
 
         $category->delete();
         Session::flash('success', 'You have sucessfully deleted the category');

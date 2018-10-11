@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 
 class ProfilesController extends Controller
 {
@@ -69,8 +70,52 @@ class ProfilesController extends Controller
      */
     public function update(Request $request)
     {
+        $this->validate($request,[
+
+            'name'=>'required',
+            'email'=>'required|email',
+            'facebook'=>'required',
+            'youtube'=>'required'
+
+        ]);
+
+        $user=Auth::user();
+
+        if($request->hasFile('avatar'))
+        {
+            $avatar=$request->avatar;
+
+            $avatar_new_name=time().$avatar->getClientOriginalName();
+
+            $avatar->move('uploads/avatars/',$avatar_new_name);
+
+            $user->profile->avatar='uploads/avatars/'.$avatar_new_name;
+
+            $user->profile->save();
+
+        }
+
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->profile->facebook=$request->facebook;
+        $user->profile->youtube=$request->youtube;
+        $user->profile->about=$request->about;
+
         
+
+        if($request->has('password'))
+        {
+            $user->password=bcrypt('password');
+            $user->save();
+        }
+        $user->save();
+        $user->profile->save();
+
+        Session::flash('success','Profile successfully updated');
+
+        return redirect()->route('users');
     }
+
 
     /**
      * Remove the specified resource from storage.

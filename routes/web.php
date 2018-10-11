@@ -194,6 +194,13 @@
 			'as'=>'user.profile'
 		]);
 
+		
+		Route::get('/user/delete/{id}',[
+
+			'uses'=>"UsersController@destroy",
+			'as'=>'user.delete'
+		]);
+
 		Route::post('/users/profile/update',[
 
 			'uses'=>"ProfilesController@update",

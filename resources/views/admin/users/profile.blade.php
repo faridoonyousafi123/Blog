@@ -13,7 +13,7 @@
 			</div>
 
 			<div class="panel panel-body">
-				<form action="{{ route('user.profile.update') }}" method="post">
+				<form action="{{ route('user.profile.update') }}" method="post" enctype="multipart/form-data">
 					{{csrf_field()}}
 
 					<div class="form-group">
@@ -22,12 +22,18 @@
 					<input type="text" name="name" value="{{$user->name}}"class="form-control">
 
 					</div>
+					<div class="form-group">
+
+					<label for="email">Email</label>
+					<input type="email" name="email" value="{{$user->email}}"class="form-control">
+
+					</div>
 						
 				
 					<div class="form-group">
 
 					<label for="password"> New Password</label>
-					<input type="password" name="password" class="form-control">
+					<input type="password" name="password" class="form-control" value="{{$user->password}}">
 
 					</div>
 
