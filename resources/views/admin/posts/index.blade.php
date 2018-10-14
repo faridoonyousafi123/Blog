@@ -28,12 +28,12 @@
 
 			<td class="center-body">
 				<a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-info btn-sm">
-					<span class="fas fa-pencil-alt"></span>
+					<span class="fas fa-pencil-alt edit"></span>
 				</a>
 			</td>
 
 			<td class="center-body">
-				<a href="{{route('post.delete',['id'=>$post->id])}}" class="btn btn-sm btn-danger ">
+				<a href="{{route('post.delete',['id'=>$post->id])}}" class="btn btn-sm btn-danger "> 
 					<span class="fas fa-trash-alt"></span>
 				</a>
 			</td>

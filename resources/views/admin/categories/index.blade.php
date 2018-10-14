@@ -26,11 +26,16 @@
 
 			<td class="center-body">
 				<a href="{{route('category.edit',['id'=>$category->id])}}" class="btn btn-info btn-sm">
-					<span class="fas fa-pencil-alt"></span>
+					<span class="fas fa-pencil-alt edit"></span>
 				</a>
 			</td>
 
 			<td class="center-body">
+				<div class="btn">
+  <div class="trash"></div>
+</div>
+
+
 				<a href="{{route('category.delete',['id'=>$category->id])}}" class="btn btn-sm btn-danger ">
 					<span class="fas fa-trash-alt"></span>
 				</a>

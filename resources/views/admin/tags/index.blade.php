@@ -26,7 +26,7 @@
 
 			<td class="center-body">
 				<a href="{{route('tag.edit',['id'=>$tag->id])}}" class="btn btn-info btn-sm">
-					<span class="fas fa-pencil-alt"></span>
+					<span class="fas fa-pencil-alt edit"></span>
 				</a>
 			</td>
 

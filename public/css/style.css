@@ -62,10 +62,17 @@ a
 	border:1px solid black;
 	text-align: left;
 	font-size: 1em;
+
 	border:none;
 }
 
+.menu-items:hover{
+	animation: menuitems_keyframe 0.5s linear;
+}
+
 .menu-items a:hover{
+
+
 	
 	color:red !important;
 	font-weight: bold;
@@ -73,13 +80,21 @@ a
 	transition: color font-weight 0.2s ease-out;
 
 }
-td:hover span{
+a:hover span{
 
 	animation: jiggle 0.5s ease-in infinite;
+	
   	transition-delay:0s; 
 
 }
+
+a:hover .edit{
+	animation: edit 0.5s ease-in infinite;
+}
 @keyframes jiggle {
+	0%{
+			
+	}
   48%, 62% {
     transform: scale(1.0, 1.0)
   }
@@ -92,4 +107,45 @@ td:hover span{
   59% {
     transform: scale(1.0, 1.0) translate(0, -3px)
   }
+}
+
+@keyframes edit{
+	0%{
+		transform: translateX(-5px)
+	}
+	10%, 20% {
+    transform: translateX(-3px) 
+  }
+  30% {
+    transform: translate(0px) 
+  }
+  56% {
+    transform:  translate(3px,1px)
+  }
+  70% {
+    transform:  translateX(6px)
+
+  }
+
+  80%{
+  	transform: translateX(4px)
+  }
+  100%{
+  	transform: translateX(-5px)
+  }
+}
+
+@keyframes menuitems_keyframe{
+	0%{
+		transform: translateX(0px);
+	}
+	10%{
+		transform: translateX(5px);
+	}
+	20%{
+		transform: translateX(8px);
+	}
+	30%{
+		transform: translateX(9px);
+	}
 }

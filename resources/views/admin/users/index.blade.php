@@ -64,6 +64,7 @@
 				<th colspan="50" class="text-center">No Users</th>
 			</tr>
 		@endif
+		
 	</tbody>
 
 </table>
