@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
@@ -32,7 +32,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                       Blog
                     </a>
                 </div>
 
@@ -51,22 +51,34 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li>
+                                   
+                                      <li>
+                                        <a href="{{route('user.profile')}}" class="pointer">
+                                            <span class="fas fa-user no-effect"></span>
+                                            My Profile
+                                         </a>
+                                    </li>
+
+                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+
+                                            <span class="fas fa-sign-out-alt move"></span>
+                                          
+
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                </ul>
+
+                                    
                             </li>
                         @endif
                     </ul>
@@ -137,7 +149,7 @@
                 </div>
             </div>
         </div>
-       
+        
     </div>
 
     <!-- Scripts -->
@@ -151,5 +163,7 @@
             toastr.info("{{Session::get('info')}}")
         @endif
     </script>
+   
+</script>
 </body>
 </html>

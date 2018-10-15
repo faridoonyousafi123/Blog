@@ -55,6 +55,19 @@ a
 }
 
 
+a:hover .move{
+	animation: move 1s linear infinite !important;
+	padding-right: 50px;
+	text-decoration: none !important;
+	color: red;
+}
+.pointer{
+	cursor: pointer;
+
+}
+.pointer:hover{
+	color:red !important;
+}
 
 .main-menu-items{
 
@@ -86,6 +99,15 @@ a:hover span{
 	
   	transition-delay:0s; 
 
+}
+.no-effect{
+
+	animation: none !important;
+	margin-right: 10px;
+
+}
+.no-effect:hover{
+	color:red !important;
 }
 
 a:hover .edit{
@@ -147,5 +169,33 @@ a:hover .edit{
 	}
 	30%{
 		transform: translateX(9px);
+	}
+}
+
+@keyframes move{
+
+	0%{
+		transform:translateX(-10%);
+
+	}
+	20%{
+		transform: translateX(30%);
+	}
+	40%{
+
+		transform: translateX(60%);
+
+	}
+	60%{
+		transform:translateX(90%);
+
+	}
+	80%{
+		transform: translateX(120%);
+	}
+	100%{
+
+		transform: translateX(150%);
+
 	}
 }

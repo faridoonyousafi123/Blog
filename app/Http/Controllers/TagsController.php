@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Tag;
 use Session;
 use Illuminate\Http\Request;
+use App\Post;
 
 class TagsController extends Controller
 {
@@ -110,7 +111,20 @@ class TagsController extends Controller
      */
     public function destroy($id)
     {
-        Tag::destroy($id);
+        $tags=Tag::find($id);
+
+        foreach($tags->posts as $post)
+        {
+            if($tags->posts->count()>0)
+            {
+                Session::flash('info','This Tag is associated with Posts Please delete the post first');
+                return redirect()->back();
+            }
+            else
+
+            $post->delete();
+        }
+
         Session::flash('success','Tag deleted Successfully.');
 
         return redirect()->back();

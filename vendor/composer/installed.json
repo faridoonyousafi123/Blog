@@ -3470,6 +3470,59 @@
         "homepage": "https://symfony.com"
     },
     {
+        "name": "themsaid/laravel-langman-gui",
+        "version": "v0.3.1",
+        "version_normalized": "0.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/themsaid/laravel-langman-gui.git",
+            "reference": "84a172fe1b9faba0a894da3cdf327f4e9fa657e8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/themsaid/laravel-langman-gui/zipball/84a172fe1b9faba0a894da3cdf327f4e9fa657e8",
+            "reference": "84a172fe1b9faba0a894da3cdf327f4e9fa657e8",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/translation": "~5.4",
+            "php": "^7.0 || ^7.1"
+        },
+        "time": "2017-10-05T15:50:58+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Themsaid\\LangmanGUI\\LangmanServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Themsaid\\LangmanGUI\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mohamed Said",
+                "email": "theMohamedSaid@gmail.com",
+                "homepage": "https://themsaid.com"
+            }
+        ],
+        "description": "Manage language files with ease.",
+        "homepage": "https://github.com/themsaid/laravel-langman-gui",
+        "keywords": [
+            "laravel",
+            "localization",
+            "multilingual"
+        ]
+    },
+    {
         "name": "tijsverkoyen/css-to-inline-styles",
         "version": "2.2.1",
         "version_normalized": "2.2.1.0",
