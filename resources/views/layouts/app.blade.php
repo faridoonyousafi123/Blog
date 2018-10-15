@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Blog By Faridoon Yousafi</title>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -155,12 +155,22 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/toastr.min.js') }}"></script>
-    <<script>
+    <script>
         @if(Session::has('success'))
             toastr.success("{{Session::get('success')}}")
         @endif
          @if(Session::has('info'))
             toastr.info("{{Session::get('info')}}")
+        @endif
+         @if($errors)
+            <?php
+            foreach ($errors->all() as $error) {
+                ?>
+                toastr.error("{!!$error!!}")
+                <?php
+            }
+            ?>
+
         @endif
     </script>
    
