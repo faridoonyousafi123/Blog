@@ -32,7 +32,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                       Blog
+                       Home
                     </a>
                 </div>
 
