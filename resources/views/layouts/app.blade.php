@@ -14,7 +14,17 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
+    <style>
+                body{
+                    height: 100vh;
+                    background: url('/uploads/background/background.jpg');
+               
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+                }
+                
+    </style>
 </head>
 <body>
     <div id="app">
@@ -89,7 +99,7 @@
         <div class="container">
             <div class="row">
 
-                @if(Auth::check())
+                <!-- @if(Auth::check())
                      <div class="col-lg-4 text-left" >
                     <ul class="list-item main-menu-items" >
                         <a class="menu-items-link" href="{{route('home')}}"> <li class="list-group-item menu-items">
@@ -142,9 +152,9 @@
                         </li></a>
                     </ul>
                 </div>
-                @endif
+                @endif -->
                
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                         @yield('content')
                 </div>
             </div>
