@@ -33,9 +33,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <!-- <a class="navbar-brand" href="{{ url('/') }}">
                        Home
-                    </a>
+                    </a> -->
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -53,7 +53,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span class="caret"></span>
+                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span style="margin-right:4px; margin-left: 3px;">{{Auth::user()->name}}</span><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -107,7 +107,7 @@
                   <div class="links">
                <a class="mytag mytags" href="{{ url('/admin/home') }}"><i class=" myicon fas fa-home menu"></i></a>
                <div class=" ">
-                  <span class="myspan">Home</span>
+                  <span class="myspan">Home Page</span>
                </div>
             </div>
             <div class="links">
@@ -154,6 +154,17 @@
             
          </div>
 
+
+
+      </div>
+      <div class="centent-row">
+          <div class="flex-left">
+            
+            <div class="child-main">
+                
+                {{--new content goes here --}}
+
+         </div>
       </div>
       @endif
       <script src="{{ asset('js/app.js') }}"></script>

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<a class="btn btn-success" href="{{route('user.create')}}">
+                            <span class="fas fa-plus" style="margin-right: 10px;"></span>
+                         New User</a>
 
 
 <div class="panel panel-default panel-shadow">

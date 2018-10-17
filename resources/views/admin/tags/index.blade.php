@@ -2,6 +2,9 @@
 
 @section('content')
 
+<a class="btn btn-success" href="{{route('tag.create')}}">
+                            <span class="fas fa-plus" style="margin-right: 10px;"></span>
+                         New Tag</a>
 
 <div class="panel panel-default">
 	<div class="panel panel-heading main-body">

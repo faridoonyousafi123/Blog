@@ -24,7 +24,7 @@
 					<div class="form-group">
 
 					<label for="featured">Featured Image</label>
-					<input type="file" name="featured" class="form-control">
+					<input type="file" style="padding-bottom:40px !important;" name="featured" class="form-control">
 					
 					</div>
 

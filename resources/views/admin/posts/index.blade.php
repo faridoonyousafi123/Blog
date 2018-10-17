@@ -2,7 +2,9 @@
 
 @section('content')
 
-
+ <a class="btn btn-success" href="{{route('post.create')}}">
+                           <span class="fas fa-plus" style="margin-right: 10px;"></span>
+                        </li>New Post</a>
 <div class="panel panel-default panel-shadow">
 	<div class="panel panel-heading main-body">
 				All Posts

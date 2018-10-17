@@ -125,6 +125,7 @@ class TagsController extends Controller
             $post->delete();
         }
 
+        $tags->delete();
         Session::flash('success','Tag deleted Successfully.');
 
         return redirect()->back();

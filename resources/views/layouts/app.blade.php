@@ -21,7 +21,7 @@
                
                 background-position: center;
                 background-repeat: no-repeat;
-                background-size: cover; 
+                background-size: auto; 
                 }
                 
     </style>
@@ -41,8 +41,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                       Home
+                    <a style="width: 10px"class="navbar-brand" href="{{ url('/') }}">
+                       <span class="fas fa-grip-horizontal no-effect" style="font-size: 2.5em;"></span>
                     </a>
                 </div>
 
@@ -59,9 +59,9 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
+                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span class="caret"></span>
+                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span style="margin-right:4px; margin-left: 3px;">{{Auth::user()->name}}</span><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">

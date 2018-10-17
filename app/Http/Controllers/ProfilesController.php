@@ -105,7 +105,7 @@ class ProfilesController extends Controller
 
         if($request->has('password'))
         {
-            $user->password=bcrypt('password');
+            $user->password=bcrypt($request->password);
             $user->save();
         }
         $user->save();

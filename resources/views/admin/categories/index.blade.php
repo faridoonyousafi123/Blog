@@ -3,11 +3,19 @@
 @section('content')
 
 
+<a class="btn btn-success" href="{{route('category.create')}}">
+                            <span class="fas fa-plus" style="margin-right: 10px;"></span>
+                         New Category</a>
+
 <div class="panel panel-default">
-	<div class="panel panel-heading main-body">
+
+				
+	
+<div class="panel panel-heading main-body">
 				All Categories
 			</div>
 	<div class="panel-body">
+
 		<table class="table table-hover">
 	
 	<thead>
