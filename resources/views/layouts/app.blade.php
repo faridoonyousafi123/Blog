@@ -9,26 +9,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Blog By Faridoon Yousafi</title>
-    
+     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <style>
-                body{
-                    height: 100vh;
-                    background: url('/uploads/background/background.jpg');
-               
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: auto; 
-                }
-                
-    </style>
+  
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+   <div id="app">
+        <nav style="background-color: rgba(14, 26, 31, 0.41) !important;border: none;box-shadow: rgb(25, 23, 23) 1px 0px 30px 2px; height: 58px;"class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -42,7 +32,7 @@
 
                     <!-- Branding Image -->
                     <a style="width: 10px"class="navbar-brand" href="{{ url('/') }}">
-                       <span class="fas fa-grip-horizontal no-effect" style="font-size: 2.5em;"></span>
+                       <span class="fas fa-grip-horizontal no-effect" style="font-size: 2.0em; margin-bottom: 4px; color:white"></span>
                     </a>
                 </div>
 
@@ -59,9 +49,9 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span style="margin-right:4px; margin-left: 3px;">{{Auth::user()->name}}</span><span class="caret"></span>
+                            <li class="dropdown" style="opacity: 1.0 !important;" >
+                                <a style="opacity: 1.0 !important; "href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span style="margin-right:4px;margin-left: 3px;color: white;">{{Auth::user()->name}}</span><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -156,7 +146,9 @@
                
                 <div class="col-lg-12">
                         @yield('content')
+
                 </div>
+
             </div>
         </div>
         

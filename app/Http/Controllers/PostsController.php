@@ -190,6 +190,6 @@ class PostsController extends Controller
 
         Session::flash('success','Post Restored Succesfully !');
 
-        return redirect()->route('posts');
+        return redirect()->route('post.trashed');
     }
 }

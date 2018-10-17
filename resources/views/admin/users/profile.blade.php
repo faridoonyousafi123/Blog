@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -51,7 +52,7 @@
 					
 				
 					<label for="avatar">Upload new Picture</label>
-					<input type="file" name="avatar" class="form-control">
+					<input type="file" name="avatar" class="form-control" style="padding-bottom: 40px;">
 
 					</div>
 
@@ -75,7 +76,7 @@
 				</div>
 
 				<div class="form-group">
-					<textarea name="about" id="about" cols="95" rows="5">{{$user->profile->about}}</textarea>
+					<textarea name="about" id="about" cols="150" rows="5">{{$user->profile->about}}</textarea>
 					</div>
 
 

@@ -6,7 +6,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-      <title>Laravel</title>
+      <title>Faridoon Yousafi</title>
       <!-- Fonts -->
       <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
       <!-- Styles -->
@@ -18,9 +18,8 @@
    </style>
    </head>
    <body>
-     
-     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+      <div id="app">
+     <nav style="background-color: rgba(14, 26, 31, 0.41) !important;border: none;box-shadow: rgb(25, 23, 23) 1px 0px 30px 2px;"class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -51,9 +50,9 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span style="margin-right:4px; margin-left: 3px;">{{Auth::user()->name}}</span><span class="caret"></span>
+                            <li class="dropdown" style="opacity: 1.0 !important;" >
+                                <a style="opacity: 1.0 !important; "href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span style="margin-right:4px;margin-left: 3px;color: white;font-weight: 600;">{{Auth::user()->name}}</span><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -167,6 +166,8 @@
          </div>
       </div>
       @endif
+   </div>
       <script src="{{ asset('js/app.js') }}"></script>
+     
    </body>
 </html>

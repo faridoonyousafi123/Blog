@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin+Condensed');
- html, body {
-     background: url('/uploads/background/background.jpg') !important;
-     background-position: center !important;
-     background-repeat: no-repeat !important;
-     background-size: cover !important;
+ 
+ body {
+    background: #E6DADA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
      font-family: 'Nunito', sans-serif !important;
      font-weight: 200 !important;
      height: 100vh !important;
@@ -60,19 +61,19 @@
      align-content: center !important;
      background-color: darkred !important;
      padding:30px 30px 30px 30px !important;
-     border-radius: 20% !important;
+     border-radius: 10% !important;
      margin-bottom: 5px;
 }
  .menu-categories{
      background-color: darkgreen !important;
-     border-radius: 20% !important;
+     
 }
  .menu-posts{
      background-color: #9999ff !important;
-     border-radius: 20% !important;
+   
 }
  .menu-tags{
-     background-color: #ff1a8c !important;
+     background-color: #007399 !important;
 }
  .menu-users {
      background-color: #ffcc00 !important;
@@ -99,7 +100,9 @@
 }
  .myspan{
      font-family: 'Cabin Condensed', sans-serif;
-     color:black;
+     color:white;
+
+     font-size: 1.0em;
      justify-content: center !important;
      border:none !important;
      box-shadow: none !important;

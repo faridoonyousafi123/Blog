@@ -1,11 +1,9 @@
-body{
-	background-color: white !important;
-}
+
 a
 {
 	text-decoration:none !important;
 	
-	margin-bottom: 5px !important;
+	margin-bottom: 10px !important;
 
 }
 .center-heading
@@ -19,10 +17,10 @@ a
 
 .main-body{
 
-	text-align: center;
-	font-size: 1.5em;
-	border-color: #ffcc00 !important;
-	background-color: #ffcc00 !important;
+    text-align: center;
+    font-size: 1.5em;
+    /* border-color: #ffcc00 !important; */
+    background-color: #8eb4cb !important;
 }
 
 .menu-items{
