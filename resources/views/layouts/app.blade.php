@@ -46,30 +46,26 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
+                           <!--  <li><a href="{{ route('login') }}">Login</a></li> -->
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown" style="opacity: 1.0 !important;" >
                                 <a style="opacity: 1.0 !important; "href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img src="{{ asset(Auth::user()->profile->avatar) }}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span style="margin-right:4px;margin-left: 3px;color: white;">{{Auth::user()->name}}</span><span class="caret"></span>
+                                    <img src="{{asset(Auth::user()->profile->avatar)}}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span style="margin-right:4px;margin-left: 3px;color: white;">{{Auth::user()->name}}</span><span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu no-effect" role="menu" style="background-color: rgb(35, 53, 59);">
                                    
-                                      <li>
-                                        <a href="{{route('user.profile')}}" class="pointer">
-                                            <span class="fas fa-user no-effect"></span>
-                                            My Profile
-                                         </a>
-                                    </li>
+                                 
 
                                      <li>
-                                        <a href="{{ route('logout') }}"
+                                        <a style="color:white;" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 
-                                            <span class="fas fa-sign-out-alt move"></span>
-                                          
+                                            <span class="fas fa-sign-out-alt"></span>
+                                             
+                                             Log Out
 
                                         </a>
 

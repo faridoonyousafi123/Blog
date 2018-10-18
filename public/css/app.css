@@ -15,12 +15,13 @@ body {
  background: #E6DADA;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to bottom, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to bottom, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background-size: auto;
+background-size: cover;
+background-repeat: no-repeat;
 
 
      font-family: 'Nunito', sans-serif !important;
      font-weight: 200 !important;
-     height: 120vh !important;
+     height: 1000px;
      margin: 0 !important;
 }
 
@@ -2048,7 +2049,7 @@ pre code {
 .col-md-3,
 .col-md-4,
 .col-md-5,
-.col-md-6,
+
 .col-md-7,
 .col-md-8,
 .col-md-9,
@@ -2083,7 +2084,10 @@ pre code {
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-top: 60px;
+    /* position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;*/
 }
 
 .col-xs-1,
