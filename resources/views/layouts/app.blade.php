@@ -54,7 +54,7 @@
                                     <img src="{{asset(Auth::user()->profile->avatar)}}" alt="" width="30px" height="30px" style="border-radius: 50%;"> <span style="margin-right:4px;margin-left: 3px;color: white;">{{Auth::user()->name}}</span><span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu no-effect" role="menu" style="background-color: rgb(35, 53, 59);">
+                                <ul class="dropdown-menu no-effect" role="menu" style="background-color: rgb(35, 53, 59); margin-bottom: 5px;">
                                    
                                  
 

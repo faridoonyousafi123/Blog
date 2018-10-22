@@ -59,14 +59,24 @@ background: linear-gradient(to bottom, #274046, #E6DADA); /* W3C, IE 10+/ Edge, 
      width: 88.35px;
      justify-content: center !important;
      align-content: center !important;
-     background-color: darkred !important;
+    
      padding:30px 30px 30px 30px !important;
      border-radius: 10% !important;
      margin-bottom: 5px;
 }
+.menu-home{
+      background-color: darkred !important;
+    
+}
+.menu-home:hover{
+      background-color: #e92020 !important;
+}
  .menu-categories{
      background-color: darkgreen !important;
      
+}
+.menu-categories:hover{
+     background-color: #2dbf2d !important;
 }
 .menu-login{
 
@@ -78,17 +88,33 @@ background: linear-gradient(to bottom, #274046, #E6DADA); /* W3C, IE 10+/ Edge, 
      background-color: #9999ff !important;
    
 }
+.menu-posts:hover{
+
+     background-color: #5959f6 !important;
+}
  .menu-tags{
      background-color: #007399 !important;
+}
+.menu-tags:hover{
+     background-color: #00baf8 !important;
 }
  .menu-users {
      background-color: #ffcc00 !important;
 }
+.menu-users:hover{
+     background-color: #f0ed0e !important;
+}
  .menu-profile{
      background-color: #e67300 !important;
 }
+.menu-profile:hover{
+     background-color: #ff8205 !important;
+}
  .menu-trash{
      background-color: #669900 !important;
+}
+.menu-trash:hover{
+     background-color: #7ebb05 !important;
 }
  .links{
      margin-bottom: 20px;

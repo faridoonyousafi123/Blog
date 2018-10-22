@@ -115,7 +115,7 @@
             <div class="child-main">
                   
                   <div class="links">
-               <a class="mytag mytags" href="{{ url('/admin/home') }}"><i class=" myicon fas fa-home menu"></i></a>
+               <a class="mytag mytags" href="{{ url('/admin/home') }}"><i class=" myicon fas fa-home menu menu-home"></i></a>
                <div class=" ">
                   <span class="myspan">Home Page</span>
                </div>
