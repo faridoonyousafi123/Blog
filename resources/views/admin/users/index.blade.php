@@ -35,10 +35,11 @@
 				@if(Auth::id()==$user->id)
 
 								
-
+				
 				@elseif($user->admin)
 					
 					<a href="{{route('user.notadmin',['id'=>$user->id])}}" class="btn btn-xs btn-danger">Remove Permission</a>
+
 
 				@else
 

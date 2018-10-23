@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
 use Session;
+use App\Auth;
 class UsersController extends Controller
 {
 
@@ -120,6 +121,13 @@ class UsersController extends Controller
     {
         $user=User::find($id);
 
+         if($user->superadmin)
+        {
+                Session::flash('info','You can not delete super admin');
+
+        return redirect()->back();
+        }
+
         $user->profile->delete();
 
         $user->delete();
@@ -133,6 +141,7 @@ class UsersController extends Controller
 
         $user=User::find($id);
 
+
         $user->admin=1;
 
         $user->save();
@@ -144,17 +153,78 @@ class UsersController extends Controller
 
     }
 
+    public function superadmin($id){
+
+        $user=User::find($id);
+
+        if(!$user->superadmin)
+        {
+            $user->superadmin=1;
+            $user->save();
+            Session::flash('success','Successfully changed permission');
+
+        return redirect()->back();
+
+
+        }
+        
+        
+        
+
+    }
+
     public function notAdmin($id){
 
         $user=User::find($id);
 
-        $user->admin=0;
+        
+        
+            if($user->superadmin)
+             {
+                Session::flash('info','You can not delete permission of super admin');
 
-        $user->save();
+                 return redirect()->back();
+              }
+            else
+                {
+                  $user->admin=0;
 
-        Session::flash('success','Successfully changed permission');
+                    $user->save();
 
-        return redirect()->back();
+                     Session::flash('success','Successfully changed permission');
+
+                    return redirect()->back();
+                }
+        
+        
+        }
+
+        
+
+       
+        
+
+    
+
+    public function notsuperAdmin($id){
+
+        $user=User::find($id);
+
+        
+        if($user->superadmin)
+        {
+                
+        
+             $user->superadmin=0;
+
+            $user->save();
+
+            Session::flash('success','Successfully changed permission');
+
+             return redirect()->back();
+        }
+
+       
         
 
     }

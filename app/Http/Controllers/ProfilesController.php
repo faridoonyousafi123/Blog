@@ -7,7 +7,12 @@ use Auth;
 use Session;
 
 class ProfilesController extends Controller
+
 {
+        
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -74,8 +79,8 @@ class ProfilesController extends Controller
 
             'name'=>'required',
             'email'=>'required|email',
-            'facebook'=>'required',
-            'youtube'=>'required'
+            // 'facebook'=>'required',
+            // 'youtube'=>'required'
 
         ]);
 

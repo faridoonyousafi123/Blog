@@ -182,10 +182,22 @@
 			'as'=>'user.admin'
 		])->middleware('admin');
 
+		Route::get('/users/superadmin/{id}',[
+
+			'uses'=>"UsersController@superadmin",
+			'as'=>'user.superadmin'
+		])->middleware('admin');
+
 		Route::get('/users/not-admin/{id}',[
 
 			'uses'=>"UsersController@notAdmin",
 			'as'=>'user.notadmin'
+		]);
+
+		Route::get('/users/not-superadmin/{id}',[
+
+			'uses'=>"UsersController@notsuperAdmin",
+			'as'=>'user.notsuperadmin'
 		]);
 
 		Route::get('/users/profile',[

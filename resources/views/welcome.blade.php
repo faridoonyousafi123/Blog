@@ -85,7 +85,7 @@
 
 
    
-      <div class="content-row">
+      <div class="content-row hidden-xl-up">
          <div class="flex-left full-height">
             @if (Route::has('login'))
             <div class="top-right links">
@@ -167,6 +167,7 @@
 
 
       </div>
+   </div>
       <div class="centent-row">
           <div class="flex-left">
             

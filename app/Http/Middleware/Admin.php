@@ -16,7 +16,8 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::user()->admin){
+        try {
+            if(!Auth::user()->admin){
 
 
 
@@ -27,6 +28,11 @@ class Admin
 
         }
 
+            
+        } catch (Exception $e) {
+            
+        }
+        
 
 
         return $next($request);
