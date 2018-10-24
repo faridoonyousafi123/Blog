@@ -76,7 +76,7 @@ background: linear-gradient(to bottom, #274046, #E6DADA); /* W3C, IE 10+/ Edge, 
      
 }
 .menu-categories:hover{
-     background-color: #2dbf2d !important;
+     background-color: #069206 !important;
 }
 .menu-login{
 
@@ -115,6 +115,12 @@ background: linear-gradient(to bottom, #274046, #E6DADA); /* W3C, IE 10+/ Edge, 
 }
 .menu-trash:hover{
      background-color: #7ebb05 !important;
+}
+ .menu-manager{
+     background-color: #33409a !important;
+}
+.menu-manager:hover{
+     background-color: #1733f3 !important;
 }
  .links{
      margin-bottom: 20px;

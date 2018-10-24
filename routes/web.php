@@ -14,9 +14,11 @@
 
 // 	// many to many
 
-	Route::get('/', function () {
-	    return view('welcome');
-	});
+	Route::get('/', [
+		'uses'=>'HomeController@index',
+		'as'=>'home'
+	]);
+
 
 	Auth::routes();
 
@@ -26,7 +28,7 @@
 
 	Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 
-	Route::get('/home',[
+	Route::get('/',[
 		'uses'=>'HomeController@index',
 		'as'=>'home'
 	]);
@@ -219,6 +221,23 @@
 			'as'=>'user.profile.update'
 		]);
 
+		Route::get('/users/menu',[
+
+			'uses'=>"MenusController@index",
+			'as'=>'user.menu'
+		]);
+
+		Route::get('/menu/create',[
+
+			'uses'=>"MenusController@create",
+			'as'=>'menu.create'
+		]);
+
+		Route::post('/menu/store',[
+
+			'uses'=>"MenusController@store",
+			'as'=>'menu.store'
+		]);
 		
 		
 

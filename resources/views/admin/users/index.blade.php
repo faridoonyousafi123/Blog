@@ -2,8 +2,10 @@
 
 @section('content')
 <a class="btn btn-success" href="{{route('user.create')}}">
-                            <span class="fas fa-plus" style="margin-right: 10px;"></span>
+                            <span class="fas fa-plus no-effect" style="margin-right: 10px;"></span>
                          New User</a>
+
+
 
 
 <div class="panel panel-default panel-shadow">
@@ -27,9 +29,12 @@
 	
 		<tr>
 			<td class="center-body"><img src="{{asset($user->profile->avatar)}}" alt="" width="60px" height="60px" style="border-radius: 50%;"></td>
+			@if($user->superadmin)
+			<td class="center-body">{{$user->name}}<i style="margin-left:5px;"class="fas fa-star"></i></td>
+			@else
 
 			<td class="center-body">{{$user->name}}</td>
-		
+			@endif
 			<td class="center-body">
 				
 				@if(Auth::id()==$user->id)

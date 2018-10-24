@@ -294,6 +294,7 @@ class ComposerStaticInitd29057b66f572c81d679296eacad1fbe
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_07_103901_create_categories_table.php',
+        'CreateMenuUserTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_23_113951_create_menu_user_table.php',
         'CreateMenusTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_23_092324_create_menus_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePostTagTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_08_131558_create_post_tag_table.php',

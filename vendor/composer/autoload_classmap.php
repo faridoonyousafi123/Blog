@@ -9,6 +9,7 @@ return array(
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2018_10_07_103901_create_categories_table.php',
+    'CreateMenuUserTable' => $baseDir . '/database/migrations/2018_10_23_113951_create_menu_user_table.php',
     'CreateMenusTable' => $baseDir . '/database/migrations/2018_10_23_092324_create_menus_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePostTagTable' => $baseDir . '/database/migrations/2018_10_08_131558_create_post_tag_table.php',
