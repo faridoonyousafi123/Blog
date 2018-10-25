@@ -48,7 +48,7 @@
 
 				@else
 
-					<a href="{{route('user.admin',['id'=>$user->id])}}" class="btn btn-xs btn-success">Make Admin</a>
+					<a href="{{route('user.admin',['id'=>$user->id])}}" data-toggle="popover" title="Admin Access Rights" data-content="Making a user admin will able to delete only non-admin users." class="btn btn-xs btn-success">Make Admin</a>
 
 				@endif
 			</td>

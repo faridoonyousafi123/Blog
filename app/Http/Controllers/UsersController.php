@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
 use Session;
-use App\Auth;
+use Auth;
 class UsersController extends Controller
 {
 
@@ -44,6 +44,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
 
             'name'=>'required',
@@ -51,7 +52,15 @@ class UsersController extends Controller
 
         ]);
 
-        $user=User::create([
+        $exists = User::all()->where('email', $request->email)->first();
+        if($exists)
+        {
+            Session::flash('info','This email address already exists in the system.');
+            return redirect()->back();
+        }
+        else
+        {
+         $user=User::create([
 
             'name'=>$request->name,
             'email'=>$request->email,
@@ -59,7 +68,7 @@ class UsersController extends Controller
 
         ]);
 
-        $profile=Profile::create([
+         $profile=Profile::create([
 
             'user_id'=>$user->id,
             'avatar'=>'uploads/avatars/default.png'
@@ -70,11 +79,15 @@ class UsersController extends Controller
         ]);
 
 
-        Session::flash('success','User created Successfully');
+         Session::flash('success','User created Successfully');
 
-        return redirect()->route('users');
+         return redirect()->route('users'); 
+     }
 
-    }
+
+
+
+ }
 
 
     /**
@@ -121,31 +134,71 @@ class UsersController extends Controller
     {
         $user=User::find($id);
 
-         if($user->superadmin)
+        if($user->superadmin)
         {
-                Session::flash('info','You can not delete super admin');
+            Session::flash('info','You can not delete super admin');
 
-        return redirect()->back();
+            return redirect()->back();
         }
+        elseif($user->admin){
+            
+            if(Auth::user()->superadmin){
 
-        $user->profile->delete();
+                $user->profile->delete();
 
-        $user->delete();
+                $user->delete();
 
-        Session::flash('success','User has been deleted');
+                Session::flash('success','User has been deleted');
 
-        return redirect()->back();
-    }
+                return redirect()->back();
+            }
+            else{
+               Session::flash('info','Only Super admin can delete admin users');
 
-    public function admin($id){
+               return redirect()->back();
+           }
+       }
+        else{
 
-        $user=User::find($id);
+                    $user->profile->delete();
+
+                $user->delete();
+
+                Session::flash('success','User has been deleted');
+
+                return redirect()->back();
+        }
+       }
 
 
-        $user->admin=1;
 
+
+   
+
+   public function admin($id){
+
+    $user=User::find($id);
+
+
+    $user->admin=1;
+
+    $user->save();
+
+    Session::flash('success','Successfully changed permission');
+
+    return redirect()->back();
+
+
+}
+
+public function superadmin($id){
+
+    $user=User::find($id);
+
+    if(!$user->superadmin)
+    {
+        $user->superadmin=1;
         $user->save();
-
         Session::flash('success','Successfully changed permission');
 
         return redirect()->back();
@@ -153,81 +206,75 @@ class UsersController extends Controller
 
     }
 
-    public function superadmin($id){
 
-        $user=User::find($id);
 
-        if(!$user->superadmin)
-        {
-            $user->superadmin=1;
-            $user->save();
-            Session::flash('success','Successfully changed permission');
+
+}
+
+public function notAdmin($id){
+
+    $user=User::find($id);
+
+
+    if(Auth::user()->superadmin)
+    {
+         if($user->superadmin)
+    {
+        Session::flash('info','You can not delete permission of super admin');
 
         return redirect()->back();
-
-
-        }
-        
-        
-        
-
     }
+    else
+    {
+      $user->admin=0;
 
-    public function notAdmin($id){
+      $user->save();
 
-        $user=User::find($id);
+      Session::flash('success','Successfully changed permission');
 
-        
-        
-            if($user->superadmin)
-             {
-                Session::flash('info','You can not delete permission of super admin');
-
-                 return redirect()->back();
-              }
-            else
-                {
-                  $user->admin=0;
-
-                    $user->save();
-
-                     Session::flash('success','Successfully changed permission');
-
-                    return redirect()->back();
-                }
-        
-        
-        }
-
-        
-
-       
-        
-
-    
-
-    public function notsuperAdmin($id){
-
-        $user=User::find($id);
-
-        
-        if($user->superadmin)
-        {
-                
-        
-             $user->superadmin=0;
-
-            $user->save();
-
-            Session::flash('success','Successfully changed permission');
-
-             return redirect()->back();
-        }
-
-       
-        
-
+      return redirect()->back();
+  }
     }
+    else
+    {
+        Session::flash('info','Only Super admin can remove permission');
+
+      return redirect()->back();
+    }
+   
+
+
+}
+
+
+
+
+
+
+
+
+public function notsuperAdmin($id){
+
+    $user=User::find($id);
+
+
+    if($user->superadmin)
+    {
+
+
+       $user->superadmin=0;
+
+       $user->save();
+
+       Session::flash('success','Successfully changed permission');
+
+       return redirect()->back();
+   }
+
+
+
+
+}
 
 
 }

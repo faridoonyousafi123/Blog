@@ -14,6 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   
 </head>
 <body>
@@ -153,6 +154,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/toastr.min.js') }}"></script>
+     <script src="{{ asset('js/modal.js') }}"></script>
     <script>
         @if(Session::has('success'))
             toastr.success("{{Session::get('success')}}")
