@@ -21,7 +21,7 @@ background-repeat: no-repeat;
 
      font-family: 'Nunito', sans-serif !important;
      font-weight: 200 !important;
-     height: 1000px;
+     height: 100vh;
      margin: 0 !important;
 }
 
@@ -231,8 +231,8 @@ td,
 th {
     padding: 0
 }
-
-
+ 
+ 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 
 @media print {
@@ -305,6 +305,7 @@ th {
         border: 1px solid #ddd!important
     }
 }
+
 
 @font-face {
     font-family: Glyphicons Halflings;
@@ -2848,9 +2849,14 @@ th {
 .table>thead>tr>th {
     padding: 8px;
     line-height: 1.6;
-    vertical-align: top;
+    /*vertical-align: top;*/
     border-top: 1px solid #ddd
 }
+
+.table td{
+	cursor: pointer !important;
+}
+
 
 .table>thead>tr>th {
     vertical-align: bottom;
