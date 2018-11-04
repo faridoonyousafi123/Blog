@@ -40,17 +40,22 @@
 					</div>
 
 					<div class="form-group">
+
 						<label for="tag">Select Tags</label>
+						<select multiple data-placeholder="Add tags" name="tags[]">
 					@foreach($tags as $tag)
 
-					<div class="checkbox">
-						
+					
+   					 <option value="{{$tag->id}}">{{$tag->tag}}</option>
+    				
+					
+					
 
 					
-    				<label><input type="checkbox" value="{{$tag->id}}" name="tags[]">{{$tag->tag}}</label>
+    				
   					</div>
 					@endforeach
-					</div>
+					</select>				
 
 
 					<div class="form-group">

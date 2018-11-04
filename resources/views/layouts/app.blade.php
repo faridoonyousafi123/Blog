@@ -152,7 +152,9 @@
     </div>
 
     <!-- Scripts -->
+         <script src="{{ asset('js/select.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+
     <script src="{{ asset('js/toastr.min.js') }}"></script>
      <script src="{{ asset('js/modal.js') }}"></script>
     <script>
