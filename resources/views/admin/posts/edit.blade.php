@@ -18,7 +18,7 @@
 
 			<div class="form-group">
 				<label for="title">Title</label>
-				<input type="text" name="title" value="{{$posts->title}}"class="form-control">
+				<input type="text" name="title" value="{{$posts->title}}" class="form-control" id="title">
 
 			</div>
 
@@ -26,7 +26,7 @@
 			<div class="form-group">
 
 				<label for="featured">Featured Image</label>
-				<input type="file" name="featured" class="form-control">
+				<input type="file" name="featured" class="form-control" id="featured">
 
 			</div>
 
@@ -57,7 +57,7 @@
 				
 						@foreach($posts->tags as $tag)
 						<div class="selectedTags" style="width:150px;">
-						<a class="notShown shown" style=""><em>{{$tag->tag}}</em><a href="{{ route('post.tag',['id'=>$tag->id]) }}"><span class="fas fa-trash-alt no-effect"></span></a></a>
+						<a class="notShown shown" style=""><em>{{$tag->tag}}</em><a id="ajaxSubmit" href="{{ route('post.tag',['id'=>$tag->id]) }}"><span class="fas fa-trash-alt no-effect"></span></a></a>
 						</div>
 						@endforeach
 						
@@ -68,7 +68,7 @@
 		<div class="form-group">
 	
 						<label for="tag">Select New Tags</label>
-						<select id="tags" multiple  name="tags[]">
+						<select id="tags" multiple  name="tags[]" id="newcategory">
 					@foreach($tagsNotInPost as $tag)
 
 					

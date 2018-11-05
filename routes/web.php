@@ -62,7 +62,7 @@
 			'as'=>'post.delete'
 		]);
 
-		Route::get('post/deletetag/{id}',[
+		Route::get('/post/deletetag/{id}',[
 
 			'uses'=>'PostsController@deletePostTag',
 			'as'=>'post.tag'

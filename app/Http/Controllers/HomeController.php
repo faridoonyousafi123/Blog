@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
 use App\Menu;
+use App\Tag;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,6 @@ class HomeController extends Controller
     public function index()
     {
 
-        return view('welcome')->with('users',User::all());
+        return view('welcome')->with('users',User::all())->with('tag',Tag::all());
     }
 }

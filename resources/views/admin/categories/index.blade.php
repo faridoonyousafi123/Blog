@@ -28,7 +28,7 @@
 		@foreach($categories as $category)
 		<tr>
 			<td class="center-body">
-				<span class="fas fa-align-justify"></span>
+				
 				{{$category->name}}
 			</td>
 
