@@ -6,6 +6,7 @@ use App\Category;
 use App\Post;
 use App\Tag;
 use Session;
+use DB;
 
 use Illuminate\Http\Request;
 
@@ -15,12 +16,12 @@ class PostsController extends Controller
     //  * Display a listing of the resource.
     //  *
     //  * @return \Illuminate\Http\Response
-     
+
     public function index()
     {
-      
-       return view('admin.posts.index')->with('posts', Post::all());
-    }
+
+     return view('admin.posts.index')->with('posts', Post::all());
+ }
 
     /**
      * Show the form for creating a new resource.
@@ -47,8 +48,8 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        
-       
+
+
 
         $this->validate($request, [
 
@@ -100,8 +101,28 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
+
+        $tagsNotInPost = DB::table("tags")->select('*')
+        ->whereNotIn('id',function($query){
+         $query->select('tag_id')->from('post_tag');
+     })
+        ->get();
+
+        
+
+
+        // $tag_id=Tag::select('id')->whereNotIn('id',$post_tag_id)->get();
+        // echo $tag_id;
         $post= Post::find($id);
-        return view('admin.posts.edit')->with('posts',$post)->with('categories',Category::all())->with('tags',Tag::all());
+        return view('admin.posts.edit')->with('posts',$post)->with('categories',Category::all())->with('tags',Tag::all())->with('tagsNotInPost',$tagsNotInPost);
+    }
+
+    public function deletePostTag($id)
+    {
+        DB::table('post_tag')->where('tag_id', '=', $id)->delete();
+        
+        return redirect()->back();
+
     }
 
     /**
@@ -119,7 +140,7 @@ class PostsController extends Controller
             'content' => 'required',
             'category_id' => 'required'
         ]);
-       
+
         if($request->hasFile('featured'))
         {
             $featured = $request->featured;
@@ -133,7 +154,7 @@ class PostsController extends Controller
         $post->category_id = $request->category_id;
         $post->save();
 
-        $post->tags()->sync($request->tags);
+        $post->tags()->attach($request->tags);
 
 
         Session::flash('success','Post has been updated successfully !');
@@ -159,8 +180,8 @@ class PostsController extends Controller
     }
     public function trashed(){
 
-        
-        
+
+
 
         $posts= Post::onlyTrashed()->get();
 

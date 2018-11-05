@@ -2,59 +2,74 @@
 
 @section('content')
 
-		
-	@include('admin.include.errors')
+
+@include('admin.include.errors')
 
 
-		<div class="panel panel-default">
-			
-			<div class="panel panel-heading main-body">
-				Edit Post: {{$posts->title}}
+<div class="panel panel-default">
+
+	<div class="panel panel-heading main-body">
+		Edit Post: {{$posts->title}}
+	</div>
+
+	<div class="panel panel-body">
+		<form action="{{ route('post.update',['id'=>$posts->id]) }}" method="post" enctype="multipart/form-data">
+			{{csrf_field()}}
+
+			<div class="form-group">
+				<label for="title">Title</label>
+				<input type="text" name="title" value="{{$posts->title}}"class="form-control">
+
 			</div>
 
-			<div class="panel panel-body">
-				<form action="{{ route('post.update',['id'=>$posts->id]) }}" method="post" enctype="multipart/form-data">
-					{{csrf_field()}}
 
-					<div class="form-group">
-						<label for="title">Title</label>
-					<input type="text" name="title" value="{{$posts->title}}"class="form-control">
+			<div class="form-group">
 
-					</div>
+				<label for="featured">Featured Image</label>
+				<input type="file" name="featured" class="form-control">
 
+			</div>
 
-					<div class="form-group">
+			<div class="form-group">
 
-					<label for="featured">Featured Image</label>
-					<input type="file" name="featured" class="form-control">
-					
-					</div>
-
-					<div class="form-group">
-
-					<label for="category">Select a Category</label>
-					<select name="category_id" id="category" class="form-control">
+				<label for="category">Select a Category</label>
+				<select name="category_id" id="category" class="form-control">
 					@foreach($categories as $category)
 					<option value="{{$category->id}}" 
 
 						@if($posts->category->id==$category->id)
 
-								selected
+						selected
 						@endif
 
 
 
 						class="input-form">{{$category->name}}</option>
-					
-					@endforeach
+
+						@endforeach
 					</select>
-					</div>
+				</div>
 
-					<label for="tag">Select Tags</label>
-						<select multiple data-placeholder="Add tags" name="tags[]">
+				<label for="tag">Selected Tags</label>
+
+				<div class="selectMultiple selectedTags" style="padding:none !important; display: flex;" >
 					
+				
+						@foreach($posts->tags as $tag)
+						<div class="selectedTags" style="width:150px;">
+						<a class="notShown shown" style=""><em>{{$tag->tag}}</em><a href="{{ route('post.tag',['id'=>$tag->id]) }}"><span class="fas fa-trash-alt no-effect"></span></a></a>
+						</div>
+						@endforeach
+						
+					
+			
+		</div>
 
-					@foreach($tags as $tag)
+		<div class="form-group">
+	
+						<label for="tag">Select New Tags</label>
+						<select id="tags" multiple  name="tags[]">
+					@foreach($tagsNotInPost as $tag)
 
 					
    					 <option value="{{$tag->id}}">{{$tag->tag}}</option>
@@ -62,36 +77,39 @@
 					
 					
 
-					
+					@endforeach
+					</select>	
     				
   					</div>
-					@endforeach
-					</select>				
-
-	
-
-			
-
-					<div class="form-group">
-
-					<label for="content">Content</label>
-					<textarea  name="content" id="content" cols="5" rows="5" class="form-control">{{$posts->content}}</textarea>
-
-					</div>
-
-					<div class="form-group">
-						<div class="text-center">
-							<button class="btn btn-success" type="submit">
-								Update Post
-							</button>
-						</div>
-					</div>
+					
 
 
 
 
-				</form>
+
+
+
+
+			<div class="form-group">
+
+				<label for="content">Content</label>
+				<textarea  name="content" id="content" cols="5" rows="5" class="form-control">{{$posts->content}}</textarea>
+
 			</div>
-		</div>
-		
+
+			<div class="form-group">
+				<div class="text-center">
+					<button class="btn btn-success" type="submit">
+						Update Post
+					</button>
+				</div>
+			</div>
+
+
+
+
+		</form>
+	</div>
+</div>
+
 @stop

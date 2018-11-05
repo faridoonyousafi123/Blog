@@ -10,7 +10,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 #preload-01 { background-image: url('/uploads/background/background.jpg') no-repeat -9999px -9999px; }
 .selectMultiple {
-  width: 240px;
+  width: 260px;
   position: relative;
 }
 .selectMultiple select {
@@ -30,7 +30,7 @@
   margin-bottom: 10px;
 }
 .selectMultiple > div:hover {
-  box-shadow: 0 4px 24px -1px rgba(22, 42, 90, 0.16);
+  /*box-shadow: 0 4px 24px -1px rgba(22, 42, 90, 0.16);*/
 }
 .selectMultiple > div .arrow {
   right: 1px;
@@ -64,9 +64,9 @@
   color: #99A3BA;
   display: block;
   position: absolute;
-  left: 12px;
+  left: 11px;
   cursor: pointer;
-  top: 8px;
+  top: 0px;
   line-height: 28px;
   transition: all .3s ease;
 }
@@ -106,7 +106,7 @@
   cursor: pointer;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 0px;
   width: 24px;
   height: 28px;
   display: block;
@@ -206,7 +206,7 @@
 .selectMultiple > ul li {
   color: #1E2330;
   background: #fff;
-  padding: 12px 16px;
+  padding: 10px 12px;
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -8345,3 +8345,8 @@ button.close {
     }
 }
 
+.selectedTags{
+	border: none !important;
+	width: 240px !important;
+	display: flex;
+}
