@@ -57,7 +57,7 @@ class PostsController extends Controller
             'featured'=>'required||image',
             'content'=>'required',
             'category_id'=>'required',
-            'tags'=>'required'
+            
 
         ]);
 
