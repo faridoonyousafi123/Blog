@@ -116,6 +116,13 @@ background: linear-gradient(to bottom, #274046, #E6DADA); /* W3C, IE 10+/ Edge, 
 .menu-trash:hover{
      background-color: #7ebb05 !important;
 }
+
+.menu-settings{
+      background-color: #018296 !important;
+}
+.menu-settings:hover{
+      background-color: #05b8d4 !important;
+}
  .menu-manager{
      background-color: #33409a !important;
 }

@@ -174,7 +174,14 @@
             <div class="child-main">
                 
                 {{--new content goes here --}}
-
+                @if(Auth::user()->admin)
+                <div class="links">
+               <a class="mytag mytags" href="{{url('admin/settings')}}"><i class="myicon fas fa-cog menu menu-settings"></i></a>
+               <div class="myspan">
+                  <span class="myspan">Settings</span>
+               </div>
+            </div>
+            @endif
           
 
 

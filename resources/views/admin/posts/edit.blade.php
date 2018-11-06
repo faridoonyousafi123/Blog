@@ -57,7 +57,7 @@
 				
 						@foreach($posts->tags as $tag)
 						<div class="selectedTags" style="width:150px;">
-						<a class="notShown shown" style=""><em>{{$tag->tag}}</em><a id="ajaxSubmit" href="{{ route('post.tag',['id'=>$tag->id]) }}"><span class="fas fa-trash-alt no-effect"></span></a></a>
+						<a class="notShown shown" style=""><em>{{$tag->tag}}</em><a id="ajaxSubmit" href="{{ route('post.tag',['id'=>$tag->id]) }}"><span class="fas fa-trash-alt no-effect spanHover"></span></a></a>
 						</div>
 						@endforeach
 						

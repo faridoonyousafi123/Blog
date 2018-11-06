@@ -30,4 +30,9 @@ class HomeController extends Controller
 
         return view('welcome')->with('users',User::all())->with('tag',Tag::all());
     }
+
+    public function blog()
+    {
+        return view('blog')->with('users',User::all())->with('tag',Tag::all());
+    }
 }

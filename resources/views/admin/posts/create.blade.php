@@ -40,7 +40,7 @@
 					</div>
 
 					<div class="form-group">
-
+	
 						<label for="tag">Select Tags</label>
 						<select multiple data-placeholder="Add tags" name="tags[]">
 					@foreach($tags as $tag)
@@ -80,4 +80,17 @@
 			</div>
 		</div>
 		
+@stop
+
+@section('styles')
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+@stop
+
+@section('scripts')
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+<script>
+      $(document).ready(function() {
+            $('#content').summernote();
+      });
+</script>
 @stop

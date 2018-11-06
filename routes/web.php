@@ -14,11 +14,15 @@
 
 // 	// many to many
 
-	Route::get('/', [
+	Route::get('/admin', [
 		'uses'=>'HomeController@index',
 		'as'=>'home'
 	]);
 
+	Route::get('/', [
+		'uses'=>'FrontEndController@index',
+		'as'=>'blog'
+	]);
 
 	Auth::routes();
 
@@ -28,7 +32,7 @@
 
 	Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 
-	Route::get('/',[
+	Route::get('/admin',[
 		'uses'=>'HomeController@index',
 		'as'=>'home'
 	]);
@@ -72,6 +76,20 @@
 
 			'uses'=>"PostsController@trashed",
 			'as'=>'post.trashed'
+		]);
+
+		Route::get('/settings',[
+
+			'uses'=>'SettingsController@index',
+			'as'=>'settings'
+
+		]);
+
+		Route::post('/settings/update',[
+
+			'uses'=>'SettingsController@update',
+			'as'=>'settings.update'
+
 		]);
 
 		Route::get('/post/kill/{id}',[
