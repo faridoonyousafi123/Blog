@@ -14,6 +14,10 @@ background: linear-gradient(to bottom, #274046, #E6DADA); /* W3C, IE 10+/ Edge, 
      margin-top: 200px !important;
      height: 20vh !important;
 }
+.full-height-2 {
+     margin-top: 20px !important;
+     height: 20vh !important;
+}
  .flex-left {
      align-items: left !important;
      display: flex !important;
@@ -164,4 +168,8 @@ background: linear-gradient(to bottom, #274046, #E6DADA); /* W3C, IE 10+/ Edge, 
      justify-content: space-between !important;
      margin:0 auto !important;
 }
-
+@media screen and (min-width: 300px) {
+    .links {
+        height: 20px;
+    }
+}

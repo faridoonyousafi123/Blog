@@ -26,27 +26,30 @@
 
 	Auth::routes();
 
-
+Route::get('/{slug}', [
+			'uses' => 'FrontEndController@singlePost',
+			'as' => 'post.single'
+		]);
 
 
 
 	Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 
-	Route::get('/admin',[
-		'uses'=>'HomeController@index',
-		'as'=>'home'
-	]);
+		Route::get('/admin',[
+			'uses'=>'HomeController@index',
+			'as'=>'home'
+		]);
 
 		Route::get('/posts', [
-        'uses' => 'PostsController@index',
-        'as' => 'posts'
-    ]);
+			'uses' => 'PostsController@index',
+			'as' => 'posts'
+		]);
 		Route::get('/post/create',[
 
-		'uses'=>'PostsController@create',
-		'as'=>'post.create'
+			'uses'=>'PostsController@create',
+			'as'=>'post.create'
 
-			]);
+		]);
 
 		Route::get('/post/edit/{id}',[
 
@@ -98,6 +101,8 @@
 			'as'=>'post.kill'
 		]);
 
+		
+
 		Route::get('/post/restore/{id}',[
 
 			'uses'=>"PostsController@restore",
@@ -107,30 +112,30 @@
 
 		Route::post('/post/store',[
 
-		'uses'=>'PostsController@store',
-		'as'=>'post.store'
-			]);
+			'uses'=>'PostsController@store',
+			'as'=>'post.store'
+		]);
 
 
 
 		Route::get('/category/create',[
 
-		'uses'=>'CategoriesController@create',
-		'as'=>'category.create'
-			]);
+			'uses'=>'CategoriesController@create',
+			'as'=>'category.create'
+		]);
 
 		Route::post('/category/store',[
 
-		'uses'=>'CategoriesController@store',
-		'as'=>'category.store'
+			'uses'=>'CategoriesController@store',
+			'as'=>'category.store'
 			
-			]);
+		]);
 
 		Route::get('/categories',[
 
-		'uses'=>'CategoriesController@index',
-		'as'=>'categories'
-			]);
+			'uses'=>'CategoriesController@index',
+			'as'=>'categories'
+		]);
 
 		Route::post('/category/update/{id}',[
 

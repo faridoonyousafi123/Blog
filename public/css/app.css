@@ -580,7 +580,9 @@ optgroup {
 
 table {
     border-collapse: collapse;
-    border-spacing: 0
+    border-spacing: 0;
+    height:10px;
+    overflow-y:scroll;
 }
 
 td,
@@ -651,6 +653,7 @@ th {
     }
     .table {
         border-collapse: collapse!important
+
     }
     .table td,
     .table th {
@@ -4698,7 +4701,7 @@ tbody.collapse.in {
 .dropdown-menu>li>a:hover {
     text-decoration: none;
     color: #262626;
-    background-color: #f5f5f5
+    /*background-color: #f5f5f5*/
 }
 
 .dropdown-menu>.active>a,
