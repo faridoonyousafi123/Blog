@@ -291,6 +291,7 @@ class ComposerStaticInitd29057b66f572c81d679296eacad1fbe
     );
 
     public static $classMap = array (
+        'AddUserIdToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2018_11_11_115030_add_user_id_to_posts_table.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2018_10_07_103901_create_categories_table.php',

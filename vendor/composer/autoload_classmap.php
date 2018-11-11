@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddUserIdToPostsTable' => $baseDir . '/database/migrations/2018_11_11_115030_add_user_id_to_posts_table.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2018_10_07_103901_create_categories_table.php',
