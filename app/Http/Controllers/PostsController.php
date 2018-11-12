@@ -7,6 +7,7 @@ use App\Post;
 use App\Tag;
 use Session;
 use DB;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -54,7 +55,7 @@ class PostsController extends Controller
         $this->validate($request, [
 
             'title'=>'required||max:255',
-            'featured'=>'required||image',
+            'featured'=>'required||size:1200000',
             'content'=>'required',
             'category_id'=>'required',
             
@@ -71,6 +72,7 @@ class PostsController extends Controller
             'featured'=>'/uploads/posts/'.$featured_new_name,
             'category_id'=>$request->category_id,
             'slug'=>str_slug($request->title)
+            'user_id'=>Auth::id;
         ]);        
         //many to many
         $post->tags()->attach($request->tags);

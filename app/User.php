@@ -32,8 +32,10 @@ class User extends Authenticatable
         return $this->hasOne('App\Profile');
     }
 
-    public function menu(){
-
-        return $this->belongsToMany('App\Menu');
+    public function post()
+    {
+        return $this->HasMany('App\Post');
     }
+
+
 }
